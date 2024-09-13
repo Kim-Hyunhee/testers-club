@@ -1,0 +1,32 @@
+paths:
+  /users:
+    get:
+      tags:
+        - user
+      summary: 사전 예약 신청 수
+      responses:
+        "200":
+          description: success
+
+    post:
+      tags:
+        - user
+      summary: 사전 예약 신청
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                email:
+                  type: string
+                phoneNumber:
+                  type: string
+                birthday:
+                  type: string
+                gender:
+                  type: string
+                  enum: [woman, man]
+      responses:
+        "200":
+          description: success
